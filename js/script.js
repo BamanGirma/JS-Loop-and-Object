@@ -152,32 +152,75 @@ function calculateAverageAge(evangadiClass) {
   for (let i = 0; i < totalStudents; i++) {
     totalAge += students[i].age;
   }
-                                                            
+
   const averageAge = totalAge / totalStudents;
   return averageAge;
 }
 
 let result = calculateAverageAge(evangadiClass);
-console.log("Average age of the class: "+ result);
+console.log("Average age of the class: " + result);
 
 // question 14
 
-function calculateMalePercentage(){
+function calculateMalePercentage() {
   const students = evangadiClass.students;
   const totalStudents = students.length;
-    
-  let males=0;
-  for(let i =0; i<totalStudents; i++){
-      if(students[i].sex === "M"){
-        males++;
-      }  
+
+  let males = 0;
+  for (let i = 0; i < totalStudents; i++) {
+    if (students[i].sex === "M") {
+      males++;
+    }
   }
-  
+
   const malePercetage = (males / totalStudents) * 100;
   return malePercetage;
 }
 
 let res = calculateMalePercentage(evangadiClass);
-console.log("the percentage of male students in the class " + res+"%");
+console.log("the percentage of male students in the class " + res + "%");
 
 // question 15
+function printNumber(low, high) {
+  for (let i = low; i <= high; i++) {
+    if (i % 3 === 0) {
+      console.log(i + "div3");
+    } else {
+      console.log(i);
+    }
+  }
+}
+printNumber(1, 10);
+
+// question 16
+function fizzbuzz() {
+  for (let i = 1; i <= 100; i++) {
+    if (i % 3 === 0 && i % 5 === 0) {
+      console.log("FizzBuzz");
+    } else if (i % 3 === 0) {
+      console.log("Fizz");
+    } else if (i % 5 === 0) {
+      console.log("Buzz");
+    }
+  }
+}
+fizzbuzz();
+
+// question 17
+function isEven(num){
+  // Convert the number to a string to iterate through each digit
+  const numstr = num.toString();
+  for (let i = 0; i < numstr.length; i++) {
+    // Get the numeric value of the character
+    const a = parseInt(numstr[i]);
+
+    if(a % 2 !== 0){
+      console.log(0);
+      return;
+    }
+    
+  }
+  console.log(1);
+}
+isEven(2426);
+isEven(3234);
